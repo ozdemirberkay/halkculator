@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-// import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:halkculator/config/constants/app_constants.dart';
 import 'package:halkculator/config/theme/theme_provider.dart';
 import 'package:halkculator/features/share_calculate/share_model.dart';
@@ -15,7 +15,7 @@ import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // MobileAds.instance.initialize();
+  MobileAds.instance.initialize();
   await Hive.initFlutter();
   Hive.registerAdapter(ShareAdapter());
 

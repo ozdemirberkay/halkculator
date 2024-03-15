@@ -28,8 +28,7 @@ class _SavedPageState extends State<SavedPage> {
             itemCount: shareList.length + 1,
             itemBuilder: (context, index) {
               if (index == 0) {
-                return Container();
-                // return BannerAdManager.instance.loadAndShowAd();
+                return BannerAdManager.instance.loadAndShowAd();
               }
               index = index - 1;
               return Padding(

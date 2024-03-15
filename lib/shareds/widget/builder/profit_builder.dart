@@ -25,8 +25,7 @@ class ProfitBuilder extends StatelessWidget {
       itemCount: AppConstants.profitCalculateCount + 1,
       itemBuilder: (context, index) {
         if (index == 0) {
-          // return BannerAdManager.instance.loadAndShowAd();
-          return Container();
+          return BannerAdManager.instance.loadAndShowAd();
         }
         ProfitCalculator profitCalculator = ProfitCalculator(
             calculationType: calculationType,
