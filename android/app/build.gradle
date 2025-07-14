@@ -50,7 +50,7 @@ android {
     defaultConfig {
         applicationId "com.berkayozdemir.halkculator"
         minSdkVersion 21
-        targetSdkVersion 34
+        targetSdkVersion 35
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
