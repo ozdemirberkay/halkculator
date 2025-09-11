@@ -46,8 +46,6 @@ class ThemeManager {
         return 'light';
       case ThemeMode.dark:
         return 'dark';
-      default:
-        return 'system';
     }
   }
 

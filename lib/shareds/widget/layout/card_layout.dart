@@ -14,7 +14,7 @@ class CardLayout extends StatelessWidget {
           width: AppConstants.boxBorderWidth,
           color: AppColors.primaryColor,
         ),
-        color: AppColors.primaryColor.withOpacity(0.1),
+        color: AppColors.primaryColor.withValues(alpha: 0.1),
         borderRadius: AppConstants.borderRadius,
       ),
       padding: EdgeInsets.all(AppConstants.highMargin),
