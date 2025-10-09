@@ -1,18 +1,4 @@
 # Halkculator
-Download links
-
-
-<p align="left">
-  <a href="https://play.google.com/store/apps/details?id=com.berkayozdemir.halkculator">
-    <img src="https://github.com/ozdemirberkay/yaplist/assets/55758394/8c655b41-32a7-487b-a2aa-63f2972a37a4" width="80" />
-  </a>
-  <a href="https://appgallery.huawei.com/app/C110560271">
-    <img src="https://github.com/ozdemirberkay/yaplist/assets/55758394/d60c7a76-f4d6-471e-9f62-0a0ae4b8345a" width="80" />
-  </a>
- 
-</p>
-
-
 Profit calculator application
 
 <p align="left">
