@@ -1,45 +1,40 @@
 import 'package:flutter/material.dart';
-import 'package:halkculator/config/constants/app_constants.dart';
-import 'package:halkculator/features/saved/saved_share_card.dart';
-import 'package:halkculator/features/share_calculate/share_model.dart';
-import 'package:halkculator/shareds/ad/ads_manager.dart';
-import 'package:halkculator/shareds/database/share_database.dart';
-import 'package:halkculator/shareds/widget/layout/layout.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:halkculator/core/data/saved_positions_repository.dart';
+import 'package:halkculator/core/theme/app_sizes.dart';
+import 'package:halkculator/core/widgets/empty_state.dart';
+import 'package:halkculator/features/saved/widgets/saved_position_card.dart';
+import 'package:halkculator/l10n/app_localizations.dart';
 
-class SavedPage extends StatefulWidget {
-  const SavedPage({super.key});
+class SavedPage extends StatelessWidget {
+  const SavedPage({super.key, required this.savedPositions});
 
-  @override
-  State<SavedPage> createState() => _SavedPageState();
-}
+  final SavedPositionsRepository savedPositions;
 
-class _SavedPageState extends State<SavedPage> {
   @override
   Widget build(BuildContext context) {
-    ShareDatabase.instance.watchBox(context: context);
-    List<Share> shareList = ShareDatabase.instance.getAllShares();
+    return ValueListenableBuilder(
+      valueListenable: savedPositions.changes,
+      builder: (context, _, _) {
+        final entries = savedPositions.newestFirst();
+        if (entries.isEmpty) {
+          return EmptyState(message: AppLocalizations.of(context).savedEmpty);
+        }
 
-    return ValueListenableBuilder<Box<Share>>(
-        valueListenable: ShareDatabase.instance.shareBox.listenable(),
-        builder: (context, box, widget) {
-          return Layout(
-              body: ListView.builder(
-            itemCount: shareList.length + 1,
-            itemBuilder: (context, index) {
-              if (index == 0) {
-                return BannerAdManager.instance.loadAndShowAd();
-              }
-              index = index - 1;
-              return Padding(
-                padding: EdgeInsets.all(AppConstants.lowMargin),
-                child: SavedShareCard(
-                  share: shareList[index],
-                  index: index,
-                ),
-              );
-            },
-          ));
-        });
+        return ListView.separated(
+          padding: const EdgeInsets.all(AppSizes.spacingSmall),
+          itemCount: entries.length,
+          separatorBuilder: (_, _) =>
+              const SizedBox(height: AppSizes.spacingSmall),
+          itemBuilder: (context, index) {
+            final (:key, :position) = entries[index];
+            return SavedPositionCard(
+              key: ValueKey(key),
+              position: position,
+              onDelete: () => savedPositions.delete(key),
+            );
+          },
+        );
+      },
+    );
   }
 }

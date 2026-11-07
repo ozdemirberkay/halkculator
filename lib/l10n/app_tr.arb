@@ -1,0 +1,97 @@
+{
+  "@@locale": "tr",
+
+  "appTitle": "Halkculator",
+
+  "navCalculator": "Anasayfa",
+  "navSaved": "Kaydedilenler",
+  "navSettings": "Ayarlar",
+
+  "priceLabel": "Fiyat",
+  "quantityLabel": "Adet",
+  "calculateButton": "Hesapla",
+  "saveTooltip": "Kaydet",
+  "savedMessage": "Hesaplama kaydedildi",
+
+  "ceilingTab": "Tavan",
+  "floorTab": "Taban",
+  "ceilingDay": "{day}. Tavan",
+  "@ceilingDay": {
+    "placeholders": {
+      "day": { "type": "int" }
+    }
+  },
+  "floorDay": "{day}. Taban",
+  "@floorDay": {
+    "placeholders": {
+      "day": { "type": "int" }
+    }
+  },
+
+  "sharePrice": "Hisse Fiyatı: {price}",
+  "@sharePrice": {
+    "placeholders": {
+      "price": {
+        "type": "double",
+        "format": "decimalPatternDigits",
+        "optionalParameters": { "decimalDigits": 2 }
+      }
+    }
+  },
+  "shareQuantity": "Hisse Adeti: {quantity}",
+  "@shareQuantity": {
+    "placeholders": {
+      "quantity": { "type": "int", "format": "decimalPattern" }
+    }
+  },
+  "totalValue": "Toplam Hisse Değeri: {value}",
+  "@totalValue": {
+    "placeholders": {
+      "value": {
+        "type": "double",
+        "format": "decimalPatternDigits",
+        "optionalParameters": { "decimalDigits": 2 }
+      }
+    }
+  },
+  "changePercent": "{sign}%{value}",
+  "@changePercent": {
+    "placeholders": {
+      "sign": { "type": "String" },
+      "value": {
+        "type": "double",
+        "format": "decimalPatternDigits",
+        "optionalParameters": { "decimalDigits": 2 }
+      }
+    }
+  },
+  "profitAmount": "{sign}{amount} TL",
+  "@profitAmount": {
+    "placeholders": {
+      "sign": { "type": "String" },
+      "amount": {
+        "type": "double",
+        "format": "decimalPatternDigits",
+        "optionalParameters": { "decimalDigits": 2 }
+      }
+    }
+  },
+
+  "validationRequired": "Bir değer girin",
+  "validationInvalid": "Geçerli bir değer girin",
+  "validationNotPositive": "Sıfırdan büyük bir değer girin",
+  "validationTooLarge": "Daha küçük bir değer girin",
+
+  "savedEmpty": "Henüz kaydedilmiş bir hesaplama yok",
+  "deleteTooltip": "Sil",
+
+  "themeTitle": "Tema",
+  "themeSystem": "Sistem",
+  "themeLight": "Aydınlık",
+  "themeDark": "Karanlık",
+
+  "clearSavedTitle": "Kaydedilenleri Temizle",
+  "clearButton": "Temizle",
+  "clearSavedConfirm": "Kaydedilen tüm hesaplamalar silinecek. Emin misiniz?",
+  "cancelButton": "Vazgeç"
+}

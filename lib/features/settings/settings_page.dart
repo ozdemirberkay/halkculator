@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:halkculator/config/constants/app_constants.dart';
-import 'package:halkculator/shareds/widget/database/share/clear_share_button.dart';
-import 'package:halkculator/shareds/widget/layout/layout.dart';
-import 'package:halkculator/shareds/widget/theme/theme_changer_button.dart';
+import 'package:halkculator/core/data/saved_positions_repository.dart';
+import 'package:halkculator/core/theme/app_sizes.dart';
+import 'package:halkculator/core/theme/theme_controller.dart';
+import 'package:halkculator/features/settings/widgets/clear_saved_card.dart';
+import 'package:halkculator/features/settings/widgets/theme_mode_card.dart';
 
-class SettingsPage extends StatefulWidget {
-  const SettingsPage({super.key});
+class SettingsPage extends StatelessWidget {
+  const SettingsPage({
+    super.key,
+    required this.themeController,
+    required this.savedPositions,
+  });
 
-  @override
-  State<SettingsPage> createState() => _SettingsPageState();
-}
+  final ThemeController themeController;
+  final SavedPositionsRepository savedPositions;
 
-class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
-    return Layout(
-        body: Padding(
-      padding: EdgeInsets.all(AppConstants.highMargin),
-      child: Column(
-        children: [
-          const ThemeChangerButton(),
-          SizedBox(height: AppConstants.highMargin),
-          const ClearShareButton(),
-        ],
-      ),
-    ));
+    return ListView(
+      padding: const EdgeInsets.all(AppSizes.spacingMedium),
+      children: [
+        ThemeModeCard(controller: themeController),
+        const SizedBox(height: AppSizes.spacingMedium),
+        ClearSavedCard(savedPositions: savedPositions),
+      ],
+    );
   }
 }
