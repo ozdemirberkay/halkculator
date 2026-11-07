@@ -13,7 +13,6 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  google_mobile_ads: ^9.2.0
   hive_ce: ^2.23.0
   hive_ce_flutter: ^2.5.0
   intl: any
@@ -40,5 +39,5 @@ flutter:
   generate: true
   uses-material-design: true
   assets:
-    - assets/images/
-    - assets/animation/
+    - assets/images/candlestick.png
+    - assets/animation/empty.json

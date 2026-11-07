@@ -24,9 +24,6 @@ flutter pub get
 flutter run
 ```
 
-Debug and profile builds always show Google's test ads. Release builds use
-the production AdMob units in `lib/core/ads/ad_units.dart`.
-
 ### Android release signing
 
 Create `android/key.properties` (git-ignored):
@@ -44,10 +41,9 @@ Without this file, release builds are signed with the debug key.
 
 ```
 lib/
-├── main.dart                 # Bootstraps Hive and AdMob, then runs the app
+├── main.dart                 # Opens local storage, then runs the app
 ├── app.dart                  # MaterialApp, themes and localization
 ├── core/
-│   ├── ads/                  # Ad unit ids and the banner widget
 │   ├── constants/            # Asset paths
 │   ├── data/                 # StockPosition model and saved positions storage
 │   ├── theme/                # Colors, sizes, ThemeData and theme mode controller
@@ -63,6 +59,5 @@ lib/
 ## Tech
 
 - [hive_ce](https://pub.dev/packages/hive_ce) for local storage
-- [google_mobile_ads](https://pub.dev/packages/google_mobile_ads) for banner ads
 - [lottie](https://pub.dev/packages/lottie) for the empty-state animation
 - Flutter's built-in `gen-l10n` for localization (`lib/l10n/app_tr.arb`)
